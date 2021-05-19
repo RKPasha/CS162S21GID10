@@ -6,10 +6,6 @@
     <link href="https://unpkg.com/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
     <script src="~/Scripts/functions.js"></script>
     <title>🚘 DUKO Wheels</title>
-    <!--
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    -->
 </head>
 <body>
     <section>
@@ -19,11 +15,13 @@
                     <img src="~/media/red_logo.png" style="height: 60px; width: 350px;" />
                 </a>
                 <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-                    <a class="hover:underline mr-5 hover:text-blue-700" href="#">Home</a>
-                    <a class="hover:underline mr-5 hover:text-blue-700" href="#">New Cars</a>
-                    <a class="hover:underline mr-5 hover:text-blue-700" href="#">Used Cars</a>
-                    <a class="hover:underline mr-5 hover:text-blue-700" href="#">News</a>
-                    <a class="hover:underline mr-5 hover:text-blue-700" href="#">About</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/Home/Index">Home</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/Home/Upcoming_Cars">Upcoming Cars</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/Home/Contact">Contact Us</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/Home/News">News</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/Home/About">About</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/CEO/Index">CEO Demo</a>
+                    <a class="hover:underline mr-5 hover:text-blue-700" href="/Manager/Index">Manager Demo</a>
                 </nav>
                 <p>Don't have an account? &emsp;</p>
                 <button onclick="window.open('/Home/SignUp_Form'); return false;" class="inline-flex items-center bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-pink-500 hover:to-yellow-500 border-0 py-1 px-3 focus:outline-none rounded text-base mt-4 md:mt-0">
@@ -35,17 +33,14 @@
             </div>
         </header>
     </section>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-    </div>
+    @RenderBody()
     <footer class="text-gray-600 body-font bg-gradient-to-r from-purple-400 md:from-yellow-400 to-yellow-200">
-        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <div class="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
             <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                 <img src="~/media/logo1.png" style="height: 60px; width: 350px;">
             </a>
             <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
-                © 2020 DUKO-Wheels —
+                © 2021 DUKO-Wheels —
                 <a class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">powered by Duko Community</a>
             </p>
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
@@ -74,10 +69,7 @@
             </span>
         </div>
     </footer>
-    <!--
-         @Scripts.Render("~/bundles/jquery")
-      @Scripts.Render("~/bundles/bootstrap")
-    -->
+
     @RenderSection("scripts", required: false)
 
 </body>

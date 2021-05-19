@@ -22,12 +22,18 @@ namespace WebApplication1.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
-        public ActionResult SignUp_Form()
+        public ActionResult Signup_Form()
+        {
+            return View();
+        }
+        public ActionResult News()
+        {
+            return View();
+        }
+        public ActionResult Upcoming_Cars()
         {
             return View();
         }
