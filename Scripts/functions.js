@@ -2,6 +2,10 @@ function test() {
 alert("Anni deya yad rakhna si naa Password🙄!!!");
 }
 
+function goToMainPage() {
+    alert("good ho gya g");
+    window.location = '/Home/Index';
+}
 function goToCeoPage() {
     window.location='/CEO/Index';
 }
@@ -18,6 +22,7 @@ function Login() {
     var password = document.getElementById("password").value;
 
     if (email === "ceo@duko.com" && password === "ceo") {
+           
         goToCeoPage();
     } else if (email === "manager@duko.com" && password === "manager") {
         goToManagerPage();
@@ -26,4 +31,12 @@ function Login() {
     } else {
         alert("User Not Found!!");
     }
+}
+
+function LogOut() {
+    alert("jaja turr ja");
+    //document.getElementById("email").value = "";
+    //document.getElementById("password").value = "";
+    goToMainPage();
+
 }
