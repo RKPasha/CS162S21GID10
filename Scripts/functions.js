@@ -3,18 +3,14 @@ alert("Anni deya yad rakhna si naa Password🙄!!!");
 }
 
 function goToCeoPage() {
-    alert("CEO credentials entered");
-    //location.href='/CEO/Index';
-    window.open('/CEO/Index'); return true;
+    window.location='/CEO/Index';
 }
 
 function goToManagerPage() {
-    location.href('/Manager/Index');
-    alert("Manager credentials entered");
+    window.location = '/Manager/Index';
 }
 
 function goToUserPage() {
-    //location.href('/CEO/Index');
     alert("User Login");
 }
 function Login() {
