@@ -35,5 +35,9 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
+        public ActionResult Duko_Community()
+        {
+            return View();
+        }
     }
 }

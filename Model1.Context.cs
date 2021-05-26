@@ -25,7 +25,6 @@ namespace WebApplication1
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<User1> User1 { get; set; }
     }
 }
