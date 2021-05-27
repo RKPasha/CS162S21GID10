@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -21,16 +22,24 @@ namespace WebApplication1.Controllers
                 u.Email = data.Email;
                 u.Contact = data.ContactNumber;
                 u.Password = data.Password;
-                //u.DateOfBirth = data.DateOfBirth;
+                u.DateOfBirth = data.DateOfBirth.ToString();
                 db.User1.Add(u);
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (DbEntityValidationException ex)
             {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Hello Rehan");
+                        System.Diagnostics.Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
                 return false;
             }
-            
+
         }
         public List<UserData> AllUserData()
         {

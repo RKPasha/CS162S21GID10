@@ -11,10 +11,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="~/Scripts/functions.js"></script>
     <title>SignUp</title>
 </head>
 <body style="background-image: url('../../media/signup_cover.jpg'); background-size:cover; background-repeat: no-repeat;">
-    <form>
         <section class="text-gray-600 body-font">
             <div class="container px-5 py-24 mx-auto flex flex-wrap">
                 <div class="lg:w-2/6 md:w-1/2 rounded-lg p-6 flex flex-col md:ml-auto w-full mt-10 md:mt-0" style="background:transparent;">
@@ -33,7 +34,7 @@
                     </div>
                     <div class="relative mb-4">
                         <label for="contactNo" class="leading-7 text-sm text-red-400">Contact Number</label>
-                        <input required type="tel" id="contactNo" name="contactNo" class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                        <input required type="text" id="contactNo" name="contactNo" class="w-full bg-white rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                     </div>
                     <div class="relative mb-4">
                         <label for="password" class="leading-7 text-sm text-red-400">Password</label>
@@ -49,45 +50,16 @@
                         &emsp;I Agree to the Terms & Conditions of DUKO-Wheels.
                     </label>
                     <br>
-                    <button onclick="saveData()" type="submit" class="text-white border-0 py-2 px-8 focus:outline-none bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded text-lg">Register</button>
+                    <button onclick="saveData()" class="text-white border-0 py-2 px-8 focus:outline-none bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 rounded text-lg">Register</button>
                 </div>
             </div>
         </section>
-    </form>
-    @section Script
+    @*@section scripts
 {
         <script>
-            function saveData() {
-                alert("Function called");
-            var name = $("#name").val();
-            var dob = $("#dob").val();
-            var email = $("#email").val();
-            var contactNo = $("#contactNo").val();
-            var password = $("#password").val();
-            var obj = {
-                Name: name,
-                Email: email,
-                ConactNo: contactNo,
-                DateOfBirth: dob,
-                Password: password
-            }
-            console.log(obj);
-
-            $.ajax({
-                url: 'https://localhost:44304/api/UserAPI/AddUser',
-                type: 'POST',
-                data: JSON.stringify(obj),
-                contentType: "application/json;charset-utf-8",
-                success: function (response) {
-                    alert(response);
-                },
-                error: function (response) {
-                    alert(response);
-                }
-            })
-        }
+            
         </script>
 
-    }
+    }*@
 </body>
 </html>

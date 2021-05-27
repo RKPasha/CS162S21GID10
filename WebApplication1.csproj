@@ -293,7 +293,6 @@
     <Content Include="Views\CEO\Index.cshtml" />
     <Content Include="Views\Shared\_ManagerLayout.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
-    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Home\Duko_Community.cshtml" />
   </ItemGroup>
   <ItemGroup>
