@@ -52,7 +52,7 @@ function saveData() {
     var obj = {
         Name: name,
         Email: email,
-        ConactNumber: contactNo,
+        ContactNumber: contactNo,
         DateOfBirth: dob,
         Password: password
     }
