@@ -41,9 +41,22 @@ namespace WebApplication1.Controllers
             }
 
         }
+        [HttpGet]
         public List<UserData> AllUserData()
         {
             List<UserData> list = new List<UserData>();
+            UserDBEntities1 db = new UserDBEntities1();
+            var dblist = db.User1.ToList();
+            foreach(var dbobj in dblist)
+            {
+                UserData u = new UserData();
+                u.Name = dbobj.Name;
+                u.ContactNumber = dbobj.Contact;
+                //u.DateOfBirth = dbobj.DateOfBirth;
+                u.Email = dbobj.Email;
+                u.Password = dbobj.Password;
+                list.Add(u);
+            }
             return list;
         }
     }

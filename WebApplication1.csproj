@@ -261,6 +261,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\DBFunctions.js" />
     <Content Include="Scripts\functions.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -286,7 +287,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Home\SignUp_Form.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
     <Content Include="Views\Home\Upcoming_Cars.cshtml" />
     <Content Include="Views\Shared\_CEOLayout.cshtml" />
@@ -294,6 +294,8 @@
     <Content Include="Views\Shared\_ManagerLayout.cshtml" />
     <Content Include="Views\Manager\Index.cshtml" />
     <Content Include="Views\Home\Duko_Community.cshtml" />
+    <Content Include="Views\Shared\_TestLayout.cshtml" />
+    <Content Include="Views\Home\Signup_Form.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
