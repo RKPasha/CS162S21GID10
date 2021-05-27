@@ -204,6 +204,10 @@
     <Compile Include="Views\UserController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\CheckDatabase.mdf" />
+    <Content Include="App_Data\CheckDatabase_log.ldf">
+      <DependentUpon>CheckDatabase.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -296,10 +300,9 @@
     <Content Include="Views\Home\Duko_Community.cshtml" />
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Home\Signup_Form.cshtml" />
+    <Content Include="Views\CEO\AddManager.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
