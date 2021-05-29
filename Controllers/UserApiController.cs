@@ -16,14 +16,15 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                UserDBEntities1 db = new UserDBEntities1();
-                User1 u = new User1();
+                DukoWheelsDBEntities db = new DukoWheelsDBEntities();
+                ManagerDB m = new ManagerDB();
+                
                 u.Name = data.Name;
                 u.Email = data.Email;
                 u.Contact = data.ContactNumber;
                 u.Password = data.Password;
                 u.DateOfBirth = data.DateOfBirth.ToString();
-                db.User1.Add(u);
+                db.UserDB.Add(u);
                 db.SaveChanges();
                 return true;
             }
@@ -52,7 +53,7 @@ namespace WebApplication1.Controllers
                 UserData u = new UserData();
                 u.Name = dbobj.Name;
                 u.ContactNumber = dbobj.Contact;
-                //u.DateOfBirth = dbobj.DateOfBirth;
+                //u.DateOfBirth.ToString() = dbobj.DateOfBirth;
                 u.Email = dbobj.Email;
                 u.Password = dbobj.Password;
                 list.Add(u);
