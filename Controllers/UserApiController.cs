@@ -16,15 +16,14 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                DukoWheelsDBEntities db = new DukoWheelsDBEntities();
-                ManagerDB m = new ManagerDB();
-                
+                DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
+                UserDBTable u = new UserDBTable();
                 u.Name = data.Name;
                 u.Email = data.Email;
                 u.Contact = data.ContactNumber;
                 u.Password = data.Password;
-                u.DateOfBirth = data.DateOfBirth.ToString();
-                db.UserDB.Add(u);
+                u.DateOfBirth = data.DateOfBirth;
+                db.UserDBTables.Add(u);
                 db.SaveChanges();
                 return true;
             }

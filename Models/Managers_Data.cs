@@ -9,7 +9,5 @@ namespace WebApplication1.Models
     {
         public string BranchName { get; set; }
         public string CnicNumber { get; set; }
-        public int ContactNumber { get; set; }
-        public bool Gender { get; set; }        
     }
 }
