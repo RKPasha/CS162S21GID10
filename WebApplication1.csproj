@@ -233,7 +233,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Data\JavaApplication1-1.0.exe" />
+    <Content Include="Data\DukoWheels-1.0.exe" />
     <Content Include="DWModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DWModel.edmx</DependentUpon>
