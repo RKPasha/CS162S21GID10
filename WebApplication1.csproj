@@ -172,6 +172,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CEOapiController.cs" />
     <Compile Include="Controllers\CEOController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
@@ -339,6 +340,7 @@
     <Content Include="Views\Home\Duko_Community.cshtml" />
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Home\Signup_Form.cshtml" />
+    <Content Include="Views\CEO\AddManager.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
