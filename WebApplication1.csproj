@@ -342,7 +342,9 @@
     <Content Include="Views\Home\Signup_Form.cshtml" />
     <Content Include="Views\CEO\AddManager.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\UserData\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

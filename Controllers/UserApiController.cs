@@ -52,12 +52,13 @@ namespace WebApplication1.Controllers
                 UserData u = new UserData();
                 u.Name = dbobj.Name;
                 u.ContactNumber = dbobj.Contact;
-                //u.DateOfBirth.ToString() = dbobj.DateOfBirth;
+                //u.DateOfBirth = dbobj.DateOfBirth;
                 u.Email = dbobj.Email;
                 u.Password = dbobj.Password;
                 list.Add(u);
             }
             return list;
         }
+
     }
 }
