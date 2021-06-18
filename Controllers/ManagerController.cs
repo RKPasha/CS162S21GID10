@@ -32,5 +32,25 @@ namespace WebApplication1.Controllers
             }
             return View(list);
         }
+        public bool DeleteUser(string name)
+        {
+            using (var context=new UserDBEntities1())
+            {
+                var user = context.User1.FirstOrDefault(x => x.Name == name);
+                if (user!=null)
+                {
+                    context.User1.Remove(user);
+                    context.SaveChanges();
+                    return true;
+                }
+                return false;
+            }
+        }
+        [HttpPost]
+        public ActionResult Delete(string name)
+        {
+            DeleteUser(name);
+            return RedirectToAction("ViewAllUsers");
+        }
     }
 }
