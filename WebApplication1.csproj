@@ -341,6 +341,7 @@
     <Content Include="Views\Shared\_TestLayout.cshtml" />
     <Content Include="Views\Home\Signup_Form.cshtml" />
     <Content Include="Views\CEO\AddManager.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\CEO\ViewAllManagers.cshtml" />
   </ItemGroup>
   <ItemGroup>

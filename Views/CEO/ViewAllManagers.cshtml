@@ -1,7 +1,14 @@
 ﻿@model IEnumerable<WebApplication1.Models.Managers_Data>
 
+@{
+    ViewBag.Title = "ViewAllManagers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewAllManagers</h2>
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add new Manager", "AddManager")
 </p>
 <table class="table">
     <tr>
