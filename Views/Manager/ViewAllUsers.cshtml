@@ -1,7 +1,14 @@
 ﻿@model IEnumerable<WebApplication1.Models.UserData>
 
+@{
+    ViewBag.Title = "Application Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewAllUsers</h2>
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add new User", "Create")
 </p>
 <table class="table">
     <tr>

@@ -12,24 +12,6 @@ namespace WebApplication1.Controllers
 {
     public class CEOapiController : ApiController
     {
-        private static CEOapiController obj;
-
-        private List<Managers_Data> list;
-
-        private CEOapiController()
-        {
-            list = new List<Managers_Data>();
-        }
-
-        public static CEOapiController getObject()
-        {
-            if (obj == null)
-            {
-                obj = new CEOapiController();
-            }
-            return obj;
-        }
-
         [HttpPost]
         public bool addManager(Managers_Data data)
         {
@@ -45,6 +27,7 @@ namespace WebApplication1.Controllers
                 u.CNIC_NO = data.CnicNumber;
                 u.BranchName = data.BranchName;
                 db.ManagerDBTables.Add(u);
+                //db.ManagerDBTables.Remove(u);
                 db.SaveChanges();
                 return true;
             }
@@ -54,7 +37,6 @@ namespace WebApplication1.Controllers
                 {
                     foreach (var validationError in entityValidationErrors.ValidationErrors)
                     {
-                        System.Diagnostics.Debug.WriteLine("Hello Rehan");
                         System.Diagnostics.Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
                     }
                 }
@@ -63,10 +45,14 @@ namespace WebApplication1.Controllers
 
         }
 
-        [HttpGet]
-        public List<Managers_Data> getAllManagers()
-        {
-            return list;
-        }
+        //[HttpGet]
+        //public ManagerDBTable getManagerByID()
+        //{
+        //    return ;
+        //}
+
+          
     }
 }
+
+

@@ -61,3 +61,18 @@ function saveManagerData() {
         }
     })
 }
+
+function deleteManagerData() {
+    $.ajax({
+        url: 'https://localhost:44304/api/CEOapi/deleteManager',
+        type: 'POST',
+        data: JSON.stringify(obj),
+        contentType: "application/json;charset-utf-8",
+        success: function (response) {
+            alert(response);
+        },
+        error: function (response) {
+            alert(response);
+        }
+    })
+}

@@ -1,0 +1,40 @@
+﻿@model List<WebApplication1.ManagerDBTable>
+@{
+    ViewBag.Title = "ViewAllManagers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ViewAllManagers</h2>
+<p>
+    @Html.ActionLink("Add new Manager", "AddManager")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Date Of Birth</th>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>Contact No</th>
+        <th>Branch Name</th>
+        <th>CNIC No</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.DateOfBirth</td>
+            <td>@item.Email</td>
+            <td>@item.Password</td>
+            <td>@item.Contact</td>
+            <td>@item.BranchName</td>
+            <td>@item.CNIC_NO</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { item.Email }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "DeleteManagerData", new { item.Email })
+            </td>
+        </tr>
+    }
+</table>
