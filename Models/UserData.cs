@@ -7,7 +7,7 @@ namespace WebApplication1.Models
 {
     public class UserData : Person
     {
-        
-        
+        public int ID { get; set; }
+
     }
 }

@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<WebApplication1.Models.UserData>
-
 @{
-    ViewBag.Title = "Application Users";
+    ViewBag.Title = "ViewAllUsers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>ViewAllUsers</h2>
-
+<h2>UserData</h2>
 <p>
-    @Html.ActionLink("Add new User", "Create")
+    @Html.ActionLink("Add New User", "SignUp_Form", "Home")
 </p>
 <table class="table">
     <tr>
@@ -30,29 +27,30 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DateOfBirth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ContactNumber)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+              
+                @Html.ActionLink("Delete", "Details", new { /* id=item.PrimaryKey */ }) 
+            </td>
+        </tr>
+    }
 
 </table>

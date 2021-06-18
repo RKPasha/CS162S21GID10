@@ -22,6 +22,7 @@ namespace WebApplication1.Controllers
             foreach (var dbObj in users)
             {
                 UserData md = new UserData();
+                
                 md.Name = dbObj.Name;
                 md.DateOfBirth = dbObj.DateOfBirth;
                 md.Email = dbObj.Email;
