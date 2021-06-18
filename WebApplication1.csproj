@@ -342,6 +342,7 @@
     <Content Include="Views\Home\Signup_Form.cshtml" />
     <Content Include="Views\CEO\AddManager.cshtml" />
     <Content Include="Views\CEO\ViewAllManagers.cshtml" />
+    <Content Include="Views\Manager\ViewAllUsers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\UserData\" />
