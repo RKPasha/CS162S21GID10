@@ -50,6 +50,7 @@ namespace WebApplication1.Controllers
             foreach(var dbobj in dblist)
             {
                 UserData u = new UserData();
+                
                 u.Name = dbobj.Name;
                 u.ContactNumber = dbobj.Contact;
                 //u.DateOfBirth = dbobj.DateOfBirth;
