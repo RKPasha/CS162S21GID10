@@ -5,7 +5,12 @@
     Layout = "~/Views/Shared/_CEOLayout.cshtml";
 }
 
-<form method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="~/Scripts/DBFunctions.js"></script>
+</head>
+<body>
     <section class="text-gray-600 body-font">
         <div class="container mx-auto flex items-center">
             <div class="rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0" style="background-image: url('../../media/logo5.jpeg'); background-size:contain; background-repeat: no-repeat; background-position:center">
@@ -27,12 +32,20 @@
                     <input required type="password" id="password" name="password" class="w-full bg-transparent rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
                 <div class="relative mb-4">
+                    <label for="contactNo" class="leading-7 text-sm text-gray-900">Contact Number</label>
+                    <input required type="text" id="contactNo" name="contactNo" class="w-full bg-transparent rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="relative mb-4">
+                    <label for="cnicNo" class="leading-7 text-sm text-gray-900">CNIC Number</label>
+                    <input required type="text" id="cnicNo" name="cnicNo" class="w-full bg-transparent rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                </div>
+                <div class="relative mb-4">
                     <label for="branch-name" class="leading-7 text-sm text-gray-900">Branch Name</label>
                     <input required type="text" id="b_name" name="b_name" class="w-full bg-transparent rounded border border-gray-300 focus:border-yellow-500 focus:ring-2 focus:ring-yellow-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
-                <button type="submit" class="text-red-800 text-lg bg-transparent border-2 border-blue-300 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Add</button>
+                <button onclick="saveManagerData()" class="text-red-800 text-lg bg-transparent border-2 border-blue-300 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg">Add</button>
             </div>
         </div>
     </section>
-</form>
-
+</body>
+</html>

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="~/Scripts/functions.js"></script>
     <title>CEO Dashboard</title>
 </head>
@@ -12,7 +13,7 @@
     <section>
         <header class="text-gray-600 body-font bg-gradient-to-r from-purple-400 md:from-yellow-400 to-yellow-200">
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-                <a  href="/Home/Index" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <a href="/Home/Index" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
                     <img src="~/media/red_logo.png" style="height: 60px; width: 350px;">
                 </a>
                 <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
@@ -68,6 +69,5 @@
     </footer>
 
     @RenderSection("scripts", required: false)
-
 </body>
 </html>

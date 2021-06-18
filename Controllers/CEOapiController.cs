@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -30,12 +31,39 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost]
-        public void addEmployee(Managers_Data M)
+        public bool addManager(Managers_Data data)
         {
-            list.Add(M);
+            try
+            {
+                DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
+                ManagerDBTable u = new ManagerDBTable();
+                u.Name = data.Name;
+                u.Email = data.Email;
+                u.Contact = data.ContactNumber;
+                u.Password = data.Password;
+                u.DateOfBirth = data.DateOfBirth;
+                u.CNIC_NO = data.CnicNumber;
+                u.BranchName = data.BranchName;
+                db.ManagerDBTables.Add(u);
+                db.SaveChanges();
+                return true;
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Hello Rehan");
+                        System.Diagnostics.Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+                return false;
+            }
+
         }
 
-        [HttpPost]
+        [HttpGet]
         public List<Managers_Data> getAllManagers()
         {
             return list;
