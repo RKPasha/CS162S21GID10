@@ -172,6 +172,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ContactTable.cs">
+      <DependentUpon>DWModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CEOapiController.cs" />
     <Compile Include="Controllers\CEOController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -345,6 +348,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Manager\ViewAllUsers.cshtml" />
     <Content Include="Views\CEO\ManagersList.cshtml" />
+    <Content Include="Views\CEO\EditManager.cshtml" />
+    <Content Include="Views\CEO\ComplaintsAndReports.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\UserData\" />
