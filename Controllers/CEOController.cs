@@ -20,22 +20,19 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-        public ActionResult ViewAllManagers()
+
+        public ActionResult ManagersList()
         {
             var managers = db.ManagerDBTables.ToList();
-            foreach(var dbObj in managers)
-            {
-                Managers_Data md = new Managers_Data();
-                md.Name = dbObj.Name;
-                md.DateOfBirth = dbObj.DateOfBirth;
-                md.Email = dbObj.Email;
-                md.Password = dbObj.Password;
-                md.ContactNumber = dbObj.Contact;
-                md.CnicNumber = dbObj.CNIC_NO;
-                md.BranchName = dbObj.BranchName;
-                list.Add(md);
-            }
-            return View(list);
+            return View(managers);
+        }
+        public ActionResult DeleteManagerData(String Email)
+        {
+            var res = db.ManagerDBTables.Where(x => x.Email == Email).First();
+            db.ManagerDBTables.Remove(res);
+            db.SaveChanges();
+            var list = db.ManagerDBTables.ToList();
+            return View("ManagersList",list);
         }
     }
 }
