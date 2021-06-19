@@ -11,15 +11,32 @@ namespace WebApplication1
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ManagerDBTable
     {
+        [Required (ErrorMessage ="Name Field must be filled..")]
         public string Name { get; set; }
+
+        [Required(ErrorMessage = "Email Field must be filled..")]
+        [EmailAddress]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "Contact Field must be filled..")]
+        [MinLength(11, ErrorMessage = "Contact No must be 11 digits long..")]
         public string Contact { get; set; }
+
+        [Required(ErrorMessage = "Password Field must be filled..")]
+        [MinLength(8,ErrorMessage ="Password must be 8 digits long..")]
         public string Password { get; set; }
+
+        [Required(ErrorMessage = "Select Date of Birth..")]
         public System.DateTime DateOfBirth { get; set; }
+
+        [Required(ErrorMessage = "Branch Name can't be empty..")]
         public string BranchName { get; set; }
+
+        [Required(ErrorMessage = "Cnic No Field must be filled..")]
         public string CNIC_NO { get; set; }
     }
 }
