@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication1.Models.UserData>
+﻿@model List<WebApplication1.UserDBTable>
 @{
     ViewBag.Title = "ViewAllUsers";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -7,7 +7,35 @@
 <p>
     @Html.ActionLink("Add New User", "SignUp_Form", "Home")
 </p>
-<table class="table">
+
+<table class="table table-hover">
+    <tr>
+        <th>Name</th>
+        <th>Date Of Birth</th>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>Contact No</th>
+        <th>Actions</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.DateOfBirth</td>
+            <td>@item.Email</td>
+            <td>@item.Password</td>
+            <td>@item.Contact<</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { item.Email }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                <a href="@Url.Action("Delete",new { item.Email})">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
@@ -48,9 +76,9 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
               
-                @Html.ActionLink("Delete", "Delete", new { id=item.Name  }) 
+                <a href="@Url.Action("Delete",new { item.Name})">Delete</a>
             </td>
         </tr>
     }
 
-</table>
+</table>*@

@@ -19,38 +19,20 @@ namespace WebApplication1.Controllers
         public ActionResult ViewAllUsers()
         {
             var users = db.UserDBTables.ToList();
-            foreach (var dbObj in users)
-            {
-                UserData md = new UserData();
-                
-                md.Name = dbObj.Name;
-                md.DateOfBirth = dbObj.DateOfBirth;
-                md.Email = dbObj.Email;
-                md.Password = dbObj.Password;
-                md.ContactNumber = dbObj.Contact;
-                list.Add(md);
-            }
-            return View(list);
-        }
-        public bool DeleteUser(string name)
-        {
-            using (var context=new UserDBEntities1())
-            {
-                var user = context.User1.FirstOrDefault(x => x.Name == name);
-                if (user!=null)
-                {
-                    context.User1.Remove(user);
-                    context.SaveChanges();
-                    return true;
-                }
-                return false;
-            }
+            return View(users);
         }
         [HttpPost]
-        public ActionResult Delete(string name)
+        
+
+
+        public ActionResult Delete(string Email)
         {
-            DeleteUser(name);
-            return RedirectToAction("ViewAllUsers");
+            var res = db.UserDBTables.Where(x => x.Email == Email).First();
+            db.UserDBTables.Remove(res);
+            db.SaveChanges();
+            var list = db.UserDBTables.ToList();
+            return View("ViewAllUsers", list);
         }
+
     }
 }
