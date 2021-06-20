@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace WebApplication1.Controllers
 {
+
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -72,6 +73,21 @@ namespace WebApplication1.Controllers
             }
             return View("Contact");
         }
+
+    
+    public ActionResult Login(string email, string password)
+    {
+        using (var context = new DukoWheelsDBEntities1())
+        {
+            bool isValid = context.ManagerDBTables.Any(x => x.Email.Equals(email) && x.Password.Equals(password));
+            if (isValid)
+            {
+                return RedirectToAction("Manager");
+            }
+                
+        }
+        return View();
     }
-       
-    }
+}
+
+}
