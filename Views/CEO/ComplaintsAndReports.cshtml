@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<WebApplication1.ContactTable>
 
 @{
-    ViewBag.Title = "Complaints And Reports";
+    ViewBag.Title = "Complaints And FeedBack";
     Layout = "~/Views/Shared/_CEOLayout.cshtml";
 }
 <body>
     <section class="text-gray-600 body-font">
         <div class="container px-5 py-10 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
-                <h1 class="font-serif title-font mb-4 text-gray-900" style="font-size: xx-large;">~Complaints And Reports~</h1>
+                <h1 class="font-serif title-font mb-4 text-gray-900" style="font-size: xx-large;">~Complaints And Feedback~</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-2xl">View all the suggestion and complaints of Application Users.</p>
             </div>
         </div>
@@ -21,13 +21,7 @@
                             <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">@item.SenderEmail</h2>
                             <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">@item.SenderName</h1>
                             <p class="leading-relaxed mb-3">@item.Message</p>
-                            <a class="text-indigo-500 inline-flex items-center">
-                                Learn More
-                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M5 12h14"></path>
-                                    <path d="M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
+                                @Html.ActionLink("Remove❌", "DeleteFeedback", new {item.Id})
                         </div>
                     </div>
                 }

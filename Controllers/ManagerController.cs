@@ -16,7 +16,6 @@ namespace WebApplication1.Controllers
         DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
         List<UserData> list = new List<UserData>();
         // GET: Manager
-        [Authorize]
         public ActionResult Index()
         {
             return View();
@@ -67,6 +66,8 @@ namespace WebApplication1.Controllers
             }
             return View();
         }
+
+        [HttpPost]
         public ActionResult EditData(UserDBTable data)
         {
             try
@@ -100,11 +101,15 @@ namespace WebApplication1.Controllers
                 }
 
             }
-            
-               
-                return View(data);
-            
-            
+
+
+            var users = db.UserDBTables.ToList();
+            return View("ViewAllUsers", users);
+            }
+
+        public ActionResult EditUserForm(UserDBTable data)
+        {
+            return View();
         }
         public ActionResult Contact(string email,string name,string message, UserDBTable data)
         {
@@ -146,8 +151,10 @@ namespace WebApplication1.Controllers
             }
             return View(data);
         }
-       
-
-
-    }
+    
+        public ActionResult VehicleManagement()
+        {
+            return View();
+        }
+}
 }
