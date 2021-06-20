@@ -29,56 +29,9 @@
             <td>@item.Contact</td>
             <td>
                 <a href="@Url.Action("Contact",new { item.Email,item.Name})">Contact</a> |
-                <a href="@Url.Action("EditData",new { item.Name,item.Email,item.DateOfBirth,item.Password,item.Contact})">Edit</a> |
+                <a href="@Url.Action("EditUserForm",new { item.Name,item.Email,item.DateOfBirth,item.Password,item.Contact})">Edit</a> |
                 <a href="@Url.Action("Delete",new { item.Email})">Delete</a>
             </td>
         </tr>
     }
 </table>
-@*<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DateOfBirth)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ContactNumber)
-        </th>
-        <th></th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ContactNumber)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-              
-                <a href="@Url.Action("Delete",new { item.Name})">Delete</a>
-            </td>
-        </tr>
-    }
-
-</table>*@

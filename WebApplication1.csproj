@@ -178,6 +178,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="ContactTable.cs">
+      <DependentUpon>DWModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CEOapiController.cs" />
     <Compile Include="Controllers\CEOController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -285,6 +288,7 @@
     <Content Include="media\signup_poster.png" />
     <Content Include="media\sportage.jpg" />
     <Content Include="media\toyota_logo.png" />
+    <Content Include="media\VMCover.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -352,8 +356,12 @@
     <Content Include="Views\Manager\ViewAllUsers.cshtml" />
     <Content Include="Views\CEO\ManagersList.cshtml" />
     <Content Include="Views\Manager\AddnewUser.cshtml" />
-    <Content Include="Views\Manager\EditData.cshtml" />
     <Content Include="Views\Manager\Contact.cshtml" />
+    <Content Include="Views\CEO\ComplaintsAndReports.cshtml" />
+    <Content Include="Views\CEO\EditManager.cshtml" />
+    <Content Include="Views\CEO\Sales.cshtml" />
+    <Content Include="Views\Manager\EditUserForm.cshtml" />
+    <Content Include="Views\Manager\VehicleManagement.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.1.21\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />

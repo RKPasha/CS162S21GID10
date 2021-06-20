@@ -110,5 +110,19 @@ namespace WebApplication1.Controllers
             var CR = db.ContactTables.ToList();
             return View(CR);
         }
+
+        public ActionResult DeleteFeedback(int id)
+        {
+            var res = db.ContactTables.Where(x => x.Id == id).First();
+            db.ContactTables.Remove(res);
+            db.SaveChanges();
+            var list = db.ContactTables.ToList();
+            return View("ComplaintsAndReports", list);
+        }
+
+        public ActionResult Sales()
+        {
+            return View();
+        } 
     }
 }
