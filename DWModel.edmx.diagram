@@ -7,6 +7,7 @@
       <Diagram DiagramId="8bf287c13acc47089c6b50140e216db9" Name="Diagram1">
         <EntityTypeShape EntityType="DukoWheelsDBModel.ManagerDBTable" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DukoWheelsDBModel.UserDBTable" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DukoWheelsDBModel.ContactTable" Width="1.5" PointX="5.125" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

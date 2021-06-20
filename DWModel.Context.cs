@@ -27,5 +27,6 @@ namespace WebApplication1
     
         public virtual DbSet<ManagerDBTable> ManagerDBTables { get; set; }
         public virtual DbSet<UserDBTable> UserDBTables { get; set; }
+        public virtual DbSet<ContactTable> ContactTables { get; set; }
     }
 }

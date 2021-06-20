@@ -8,21 +8,23 @@ namespace WebApplication1.Models
 {
 	public class Person
 	{
-        [Required(ErrorMessage ="Required")]
+        [Required(ErrorMessage = "Name Field must be filled..")]
         public string Name { get; set; }
 
-        [Required(ErrorMessage = "Required")]
+        [Required(ErrorMessage = "Select Date of Birth..")]
+        [DataType(DataType.Date)]
         public DateTime DateOfBirth { get; set; }
 
-        [Required(ErrorMessage = "Required")]
+        [Required(ErrorMessage = "Email Field must be filled..")]
         [EmailAddress]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Required")]
+        [Required(ErrorMessage = "Password Field must be filled..")]
+        [MinLength(8, ErrorMessage = "Password must be 8 characters long..")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Required")]
-        [MinLength(11,ErrorMessage ="Legnth Should be 11")]
+        [Required(ErrorMessage = "Contact Field must be filled..")]
+        [MinLength(11, ErrorMessage = "Contact No must be 11 digits long..")]
         public string ContactNumber { get; set; }
     }
 }
