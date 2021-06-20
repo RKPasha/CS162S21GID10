@@ -82,7 +82,7 @@ namespace WebApplication1.Controllers
             bool isValid = context.ManagerDBTables.Any(x => x.Email.Equals(email) && x.Password.Equals(password));
             if (isValid)
             {
-                return RedirectToAction("Manager");
+                return RedirectToAction("view","Index","Manager");
             }
                 
         }
