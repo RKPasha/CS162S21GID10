@@ -1,0 +1,51 @@
+﻿@model WebApplication1.Models.UserData
+@{
+    ViewBag.Title = "AddNewUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .error{
+        color:red;
+    }
+</style>
+@using (Html.BeginForm())
+{
+<div>
+    <br />
+    <br />
+    <div class"form-group">
+        <label>Name</label>
+        @Html.ValidationMessageFor(model => model.Name,"",new { @class="error"})
+        @Html.TextBoxFor(model=>model.Name, new { @class = "form-control" })
+    </div>
+    <div class"form-group">
+        <label>Email</label>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "error" })
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+    </div>
+    <div class"form-group">
+        <label>Contact</label>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "error" })
+        @Html.TextBoxFor(model => model.ContactNumber, new { @class = "form-control" })
+    </div>
+    <div class"form-group">
+        <label>Password</label>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "error" })
+        @Html.TextBoxFor(model => model.Password, new { @class = "form-control" })
+    </div>
+    <div class"form-group">
+        <label>DateOfBirth</label>
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "error" })
+        @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control" })
+    </div>
+    <br />
+    <div class"form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button type="reset" class="btn btn-primary">Cancel</button>
+    </div>
+</div>
+}
+<br/>
+<div>
+    @Html.ActionLink("Back to List", "ViewAllUsers")
+</div>

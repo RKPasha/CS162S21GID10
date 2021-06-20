@@ -5,7 +5,7 @@
 }
 <h2>UserData</h2>
 <p>
-    @Html.ActionLink("Add New User", "SignUp_Form", "Home")
+    @Html.ActionLink("Add New User","AddNewUser")
 </p>
 
 <table class="table table-hover">
@@ -26,10 +26,10 @@
             <td>@item.DateOfBirth</td>
             <td>@item.Email</td>
             <td>@item.Password</td>
-            <td>@item.Contact<</td>
+            <td>@item.Contact</td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { item.Email }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                <a href="@Url.Action("Contact",new { item.Email,item.Name})">Contact</a> |
+                <a href="@Url.Action("EditData",new { item.Name,item.Email,item.DateOfBirth,item.Password,item.Contact})">Edit</a> |
                 <a href="@Url.Action("Delete",new { item.Email})">Delete</a>
             </td>
         </tr>
