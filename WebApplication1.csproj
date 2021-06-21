@@ -362,6 +362,12 @@
     <Content Include="Views\CEO\Sales.cshtml" />
     <Content Include="Views\Manager\EditUserForm.cshtml" />
     <Content Include="Views\Manager\VehicleManagement.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Shared\View.cshtml" />
+    <Content Include="Views\Home\LoginDuko.cshtml" />
+    <Content Include="Views\Shared\View1.cshtml" />
+    <Content Include="Views\Home\UserView.cshtml" />
+    <Content Include="Views\Home\CeoView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.1.21\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />

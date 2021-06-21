@@ -73,21 +73,42 @@ namespace WebApplication1.Controllers
             }
             return View("Contact");
         }
-
-    
-    public ActionResult Login(string email, string password)
-    {
-        using (var context = new DukoWheelsDBEntities1())
+        public ActionResult Login()
         {
-            bool isValid = context.ManagerDBTables.Any(x => x.Email.Equals(email) && x.Password.Equals(password));
-            if (isValid)
-            {
-                return RedirectToAction("view","Index","Manager");
-            }
-                
+            return View();
         }
-        return View();
+        public ActionResult LoginDuko(string email,string password)
+        {
+            using(var context=new DukoWheelsDBEntities1())
+            {
+                bool isValid = context.ManagerDBTables.Any(x=>x.Email.Equals(email)&&x.Password.Equals(password));
+                if (isValid)
+                {
+                    return View();
+                }
+                bool isValid1= context.UserDBTables.Any(x => x.Email.Equals(email) && x.Password.Equals(password));
+                if (isValid1)
+                {
+                    return View("UserView");
+                }
+                bool isValid2 = email.Equals("ceo@dukowheels.com")&& password.Equals("incredebols7");
+                if (isValid2)
+                {
+                    return View("CeoView");
+                }
+                return View("Login");
+            }
+        }
+        public ActionResult UserView()
+        {
+            return View();
+        }
+        public ActionResult CeoView()
+        {
+            return View();
+        }
+    
+   
     }
-}
 
 }

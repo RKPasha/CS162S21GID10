@@ -11,25 +11,19 @@
 <body>
     <hr>
     <section class="text-gray-600 body-font">
-        <form method="post" action="Login">
+        
             <div style="background-image: url('../../media/cover.jpg'); background-size: contain; background-repeat: no-repeat; ">
                 <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
                     <div class="lg:w-2/6 md:w-1/2 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 hover:transition duration-700 ease-in-out" style="background: linear-gradient(to top, #000000 1%, #c7c7c7 91%);">
                         <h2 class="text-white text-lg font-medium title-font mb-5">Log In to proceed...</h2>
-                        <div class="relative mb-4">
-                            <label for="Email" class="leading-7 text-sm text-white"><strong><em>Email ID</em></strong></label>
-                            <input type="email" id="email" name="email" placeholder="Enter Email" required class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                        </div>
-                        <div class="relative mb-4">
-                            <label for="email" class="leading-7 text-sm text-white"><strong><em>Password</em></strong></label>
-                            <input type="password" id="password" name="password" placeholder="Enter Password" required class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-                            <p class="text-xs text-indigo-400 mt-3" onclick="test()"><em><a href="#">Forget Password?</a></em></p>
-                        </div>
-                        <button  type="submit" class="text-white border-0 py-2 px-8 focus:outline-none rounded text-lg bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">LOGIN</button>
+                        
+                        <a href="/Home/Login">
+                            <button class="text-white border-0 py-2 px-8 focus:outline-none rounded text-lg bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500">LOGIN</button>
+                        </a>
                     </div>
                 </div>
             </div>
-        </form>
+        
     </section>
     <hr>    <section class="text-gray-600 body-font">
         <div class="container px-5 py-24 mx-auto">

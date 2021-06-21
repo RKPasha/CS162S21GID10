@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
         DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
         List<UserData> list = new List<UserData>();
         // GET: Manager
+        
         public ActionResult Index()
         {
             return View();
@@ -64,6 +65,7 @@ namespace WebApplication1.Controllers
                 }
                 
             }
+            
             return View();
         }
 
