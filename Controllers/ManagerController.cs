@@ -156,5 +156,105 @@ namespace WebApplication1.Controllers
         {
             return View();
         }
-}
+
+        public ActionResult UsedCarsSection()
+        {
+            return View();
+        }
+
+        public ActionResult AddUsedCar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddUsedCartoDb(UsedCar data)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsedCarsTable u = new UsedCarsTable();
+                    //u.Id = data.Id;
+                    u.Brand = data.Brand;
+                    u.Model = data.Model;
+                    u.ManufecturingYear = data.ManufecturingYear;
+                    u.Milage = data.Milage;
+                    u.Type = data.Type;
+                    u.Colour = data.Colour;
+                    u.Description = data.Description;
+                    u.ImageUrl = data.ImageUrl;
+                    db.UsedCarsTables.Add(u);
+                    db.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+            }
+            var usedCars = db.UsedCarsTables.ToList();
+            return View("UsedCarsList", usedCars);
+        }
+
+        public ActionResult UsedCarsList()
+        {
+            var usedCars = db.UsedCarsTables.ToList(); 
+            return View(usedCars);
+        }
+
+        public ActionResult EditUsedCar(UsedCarsTable data)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditUsedCartoDB(UsedCarsTable data)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    UsedCarsTable u = new UsedCarsTable();
+                    u.Id = data.Id;
+                    u.Brand = data.Brand;
+                    u.Model = data.Model;
+                    u.ManufecturingYear = data.ManufecturingYear;
+                    u.Milage = data.Milage;
+                    u.Type = data.Type;
+                    u.Colour = data.Colour;
+                    u.Description = data.Description;
+                    u.ImageUrl = data.ImageUrl;
+                    db.Entry(u).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in entityValidationErrors.ValidationErrors)
+                    {
+                        System.Diagnostics.Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                    }
+                }
+            }
+            var usedCars = db.UsedCarsTables.ToList();
+            return View("UsedCarsList", usedCars);
+        }
+
+        public ActionResult DeleteUsedCar(int id)
+        {
+            var res = db.UsedCarsTables.Where(x => x.Id == id).First();
+            db.UsedCarsTables.Remove(res);
+            db.SaveChanges();
+            var list = db.UsedCarsTables.ToList();
+            return View("UsedCarsList", list);
+        }
+    }
 }

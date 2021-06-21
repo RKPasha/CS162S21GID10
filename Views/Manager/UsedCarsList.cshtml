@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication1.UsedCarsTable>
+
+@{
+    ViewBag.Title = "UsedCarsList";
+    Layout = "~/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<body>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-2 mx-auto">
+            <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="font-serif title-font mb-4 text-gray-900" style="font-size: xx-large;">~Used Cars Management~</h1>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-2xl">Available Used Cars for sale.</p>
+                <p class="lg:w-2/3 mx-auto leading-relaxed text-2xl text-indigo-600 pt-10 pb-0">@Html.ActionLink("Add Car", "AddUsedCar")</p>
+            </div>
+        </div><hr />
+                <div class="flex flex-wrap -m-4r pb-5 pt-5 pr-5 pl-5">
+                    @foreach (var item in Model)
+                    {
+                    <div class="p-4 lg:w-1/4 md:w-1/2 shadow-md rounded border-2 border-grey-600">
+                        <div class="h-full flex flex-col items-center text-center">
+                            <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="@item.ImageUrl">
+                            <div class="w-full">
+                                <h2 class="title-font font-medium text-lg text-gray-900">@item.Model</h2>
+                                <p class="mb-4"><strong>@item.Brand</strong> </p>
+                                <p class="mb-4"><strong>Registration Year: </strong>@item.ManufecturingYear</p>
+                                <p class="mb-4"><strong>Colour : </strong>@item.Colour</p>
+                                <p class="mb-4"><strong>Type : </strong>@item.Type</p>
+                                <p class="mb-4"> <strong>Milage : </strong>@item.Milage km/liter</p>
+                                <p class="mb-4"><strong>Description :</strong>@item.Description</p>
+                                <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">@Html.ActionLink("Edit", "EditUsedCar", new { item.Id, item.Brand, item.Model, item.ManufecturingYear, item.Milage, item.Type, item.Colour, item.Description, item.ImageUrl }) </button>
+                                <button class="flex mx-auto mt-6 text-white bg-red-500 border-0 py-2 px-5 focus:outline-none hover:bg-red-600 rounded">@Html.ActionLink("Delete", "DeleteUsedCar", new { id = item.Id })</button>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+    </section>
+</body>
+
+
