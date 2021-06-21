@@ -38,8 +38,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+                
                     DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
                     UserDBTable u = new UserDBTable();
                     u.Name = data.Name;
@@ -49,7 +48,7 @@ namespace WebApplication1.Controllers
                     u.DateOfBirth = data.DateOfBirth;
                     db.UserDBTables.Add(u);
                     db.SaveChanges();
-                }
+                
                 ModelState.Clear();
                 
             }
