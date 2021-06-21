@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
         DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
         List<UserData> list = new List<UserData>();
         // GET: Manager
+        
         public ActionResult Index()
         {
             return View();
@@ -37,8 +38,7 @@ namespace WebApplication1.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
+                
                     DukoWheelsDBEntities1 db = new DukoWheelsDBEntities1();
                     UserDBTable u = new UserDBTable();
                     u.Name = data.Name;
@@ -48,7 +48,7 @@ namespace WebApplication1.Controllers
                     u.DateOfBirth = data.DateOfBirth;
                     db.UserDBTables.Add(u);
                     db.SaveChanges();
-                }
+                
                 ModelState.Clear();
                 
             }
@@ -64,6 +64,7 @@ namespace WebApplication1.Controllers
                 }
                 
             }
+            
             return View();
         }
 
