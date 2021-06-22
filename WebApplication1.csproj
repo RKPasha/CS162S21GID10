@@ -222,10 +222,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Managers_Data.cs" />
+    <Compile Include="Models\NewCar.cs" />
     <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\UsedCar.cs" />
     <Compile Include="Models\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsedCarsTable.cs">
+      <DependentUpon>DWModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="User1.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -368,6 +374,9 @@
     <Content Include="Views\Shared\View1.cshtml" />
     <Content Include="Views\Home\UserView.cshtml" />
     <Content Include="Views\Home\CeoView.cshtml" />
+    <Content Include="Views\Manager\AddUsedCar.cshtml" />
+    <Content Include="Views\Manager\EditUsedCar.cshtml" />
+    <Content Include="Views\Manager\UsedCarsList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.1.21\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
