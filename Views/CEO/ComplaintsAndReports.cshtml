@@ -20,7 +20,7 @@
                         <div class="h-full bg-gray-100 bg-opacity-75 px-8 pt-16 pb-24 rounded-lg overflow-hidden text-center relative">
                             <h2 class="tracking-widest text-xs title-font font-medium text-gray-400 mb-1">@item.SenderEmail</h2>
                             <h1 class="title-font sm:text-2xl text-xl font-medium text-gray-900 mb-3">@item.SenderName</h1>
-                            <p class="leading-relaxed mb-3">@item.Message</p>
+                            <p class="leading-relaxed mb-3">@item.Message</p><br />
                                 @Html.ActionLink("Remove❌", "DeleteFeedback", new {item.Id})
                         </div>
                     </div>

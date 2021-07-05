@@ -23,5 +23,7 @@ namespace WebApplication1
         public string Colour { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
+        public string SellerName { get; set; }
+        public string SellerContact { get; set; }
     }
 }

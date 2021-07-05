@@ -10,5 +10,11 @@ namespace WebApplication1.Models
     {
         [Required]
         public int Milage { get; set; }
+
+        [Required]
+        public string SellerName { get; set; }
+
+        [Required]
+        public string SellerContact { get; set; }
     }
 }

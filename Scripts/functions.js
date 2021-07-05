@@ -34,9 +34,6 @@ function Login() {
 }
 
 function LogOut() {
-    alert("jaja turr ja");
-    //document.getElementById("email").value = "";
-    //document.getElementById("password").value = "";
     goToMainPage();
 
 }

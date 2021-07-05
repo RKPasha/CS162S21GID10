@@ -39,6 +39,8 @@
           <Property Name="Colour" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="1500" Nullable="false" />
           <Property Name="ImageUrl" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SellerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SellerContact" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="UserDBTable">
           <Key>
@@ -110,6 +112,8 @@
           <Property Name="Colour" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Description" Type="String" Nullable="false" MaxLength="1500" FixedLength="false" Unicode="true" />
           <Property Name="ImageUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SellerName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SellerContact" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -154,6 +158,8 @@
           <EntitySetMapping Name="UsedCarsTables">
             <EntityTypeMapping TypeName="DukoWheelsDBModel.UsedCarsTable">
               <MappingFragment StoreEntitySet="UsedCarsTable">
+                <ScalarProperty Name="SellerContact" ColumnName="SellerContact" />
+                <ScalarProperty Name="SellerName" ColumnName="SellerName" />
                 <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Colour" ColumnName="Colour" />

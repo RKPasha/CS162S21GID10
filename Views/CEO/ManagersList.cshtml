@@ -4,9 +4,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ViewAllManagers</h2>
+<h2>Company Managers</h2>
 <p>
     @Html.ActionLink("Add new Manager", "AddManager")
+</p>
+<hr />
+<p>
+    @Html.ActionLink("CEO Main Page", "Index")
 </p>
 <table class="table table-hover">
     <tr>
@@ -33,7 +37,6 @@
             <td>@item.CNIC_NO</td>
             <td>
                 @Html.ActionLink("Edit", "EditManager", new { item.Name,item.Email,item.Password,item.DateOfBirth,item.Contact,item.CNIC_NO,item.BranchName }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Delete", "DeleteManagerData", new { item.Email })
             </td>
         </tr>

@@ -27,8 +27,10 @@
                                 <p class="mb-4"><strong>Colour : </strong>@item.Colour</p>
                                 <p class="mb-4"><strong>Type : </strong>@item.Type</p>
                                 <p class="mb-4"> <strong>Milage : </strong>@item.Milage km/liter</p>
-                                <p class="mb-4"><strong>Description :</strong>@item.Description</p>
-                                <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">@Html.ActionLink("Edit", "EditUsedCar", new { item.Id, item.Brand, item.Model, item.ManufecturingYear, item.Milage, item.Type, item.Colour, item.Description, item.ImageUrl }) </button>
+                                <p class="mb-4"><strong>Description : </strong>@item.Description</p>
+                                <p class="mb-4"> <strong>Owner : </strong>@item.SellerName</p>
+                                <p class="mb-4"><strong>Contact : </strong>@item.SellerContact</p>
+                                <button class="flex mx-auto mt-6 text-white bg-indigo-500 border-0 py-2 px-5 focus:outline-none hover:bg-indigo-600 rounded">@Html.ActionLink("Edit", "EditUsedCar", new { item.Id, item.Brand, item.Model, item.ManufecturingYear, item.Milage, item.Type, item.Colour, item.Description, item.ImageUrl, item.SellerName, item.SellerContact }) </button>
                                 <button class="flex mx-auto mt-6 text-white bg-red-500 border-0 py-2 px-5 focus:outline-none hover:bg-red-600 rounded">@Html.ActionLink("Delete", "DeleteUsedCar", new { id = item.Id })</button>
                             </div>
                         </div>

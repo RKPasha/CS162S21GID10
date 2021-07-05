@@ -84,7 +84,8 @@ namespace WebApplication1.Controllers
                 bool isValid = context.ManagerDBTables.Any(x=>x.Email.Equals(email)&&x.Password.Equals(password));
                 if (isValid)
                 {
-                    return View();
+                    var data = context.ManagerDBTables.Where(x => x.Email.Equals(email) && x.Password.Equals(password)).FirstOrDefault();
+                    return View(data);
                 }
                 bool isValid1= context.UserDBTables.Any(x => x.Email.Equals(email) && x.Password.Equals(password));
                 if (isValid1)

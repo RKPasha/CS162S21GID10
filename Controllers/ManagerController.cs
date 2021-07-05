@@ -185,6 +185,8 @@ namespace WebApplication1.Controllers
                     u.Colour = data.Colour;
                     u.Description = data.Description;
                     u.ImageUrl = data.ImageUrl;
+                    u.SellerName = data.SellerName;
+                    u.SellerContact = data.SellerContact;
                     db.UsedCarsTables.Add(u);
                     db.SaveChanges();
                 }
@@ -231,6 +233,8 @@ namespace WebApplication1.Controllers
                     u.Colour = data.Colour;
                     u.Description = data.Description;
                     u.ImageUrl = data.ImageUrl;
+                    u.SellerName = data.SellerName;
+                    u.SellerContact = data.SellerContact;
                     db.Entry(u).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
