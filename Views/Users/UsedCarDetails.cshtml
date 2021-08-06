@@ -1,0 +1,31 @@
+﻿@model WebApplication1.UsedCarsTable
+
+@{
+    ViewBag.Title = "Car Details";
+    Layout = "~/Views/Shared/View1.cshtml";
+}
+
+    <div class="py-20 flex flex-wrap w-full  flex-col items-center text-center">
+        <h3 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Car Details</h3>
+    </div>
+    <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+            <div class="flex flex-wrap -mx-4 -mb-10 text-center">
+                <div class="sm:w-1/2 mb-10 px-4">
+                    <div class="rounded-lg h-64 overflow-hidden">
+                        <img alt="team" class="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src="@Html.DisplayFor(model => model.ImageUrl)">
+                    </div>
+                    <h2 class="title-font text-2xl font-medium text-gray-900 mt-6 mb-3">@Html.DisplayFor(model => model.Model)</h2>
+                    <h3 class="leading-relaxed text-2xl"><strong>@Html.DisplayFor(model => model.Brand)</strong> </h3>
+                    <h3 class="leading-relaxed text-2xl"><strong>Registration Year: </strong>@Html.DisplayFor(model => model.ManufecturingYear)</h3>
+                    <h3 class="leading-relaxed text-2xl"><strong>Colour : </strong>@Html.DisplayFor(model => model.Colour)</h3>
+                    <h3 class="leading-relaxed text-2xl"><strong>Type : </strong>@Html.DisplayFor(model => model.Type)</h3>
+                    <h3 class="leading-relaxed text-2xl"> <strong>Milage : </strong>@Html.DisplayFor(model => model.Milage) km/liter</h3>
+                    <h3 class="leading-relaxed text-2xl"><strong>Description : </strong>@Html.DisplayFor(model => model.Description)</h3>
+                    <h3 class="leading-relaxed text-2xl"> <strong>Owner : </strong>@Html.DisplayFor(model => model.SellerName)</h3>
+                    <h3 class="leading-relaxed text-2xl"><strong>Contact : </strong>@Html.DisplayFor(model => model.SellerContact)</h3>
+                    <button class="flex mx-auto mt-6 text-white bg-red-500 border-0 py-2 px-5 focus:outline-none hover:bg-red-600 rounded">@Html.ActionLink("Back", "UsedCars")</button>
+                </div>
+            </div>
+        </div>
+    </section>

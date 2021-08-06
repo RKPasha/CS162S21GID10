@@ -181,11 +181,11 @@
     <Compile Include="ContactTable.cs">
       <DependentUpon>DWModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\CEOapiController.cs" />
     <Compile Include="Controllers\CEOController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManagerController.cs" />
     <Compile Include="Controllers\UserApiController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DWModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -377,6 +377,9 @@
     <Content Include="Views\Manager\AddUsedCar.cshtml" />
     <Content Include="Views\Manager\EditUsedCar.cshtml" />
     <Content Include="Views\Manager\UsedCarsList.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\UsedCars.cshtml" />
+    <Content Include="Views\Users\UsedCarDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="packages\AWSSDK.SecurityToken.3.7.1.21\analyzers\dotnet\cs\AWSSDK.SecurityToken.CodeAnalysis.dll" />
@@ -397,6 +400,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

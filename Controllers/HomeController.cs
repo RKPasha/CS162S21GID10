@@ -90,7 +90,8 @@ namespace WebApplication1.Controllers
                 bool isValid1= context.UserDBTables.Any(x => x.Email.Equals(email) && x.Password.Equals(password));
                 if (isValid1)
                 {
-                    return View("UserView");
+                    var data = context.UserDBTables.Where(x => x.Email.Equals(email) && x.Password.Equals(password)).FirstOrDefault();
+                    return View("UserView", data);
                 }
                 bool isValid2 = email.Equals("ceo@dukowheels.com")&& password.Equals("incredebols7");
                 if (isValid2)
@@ -100,9 +101,9 @@ namespace WebApplication1.Controllers
                 return View("Login");
             }
         }
-        public ActionResult UserView()
+        public ActionResult UserView(UserDBTable data)
         {
-            return View();
+            return View(data);
         }
         public ActionResult CeoView()
         {
